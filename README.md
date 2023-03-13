@@ -40,13 +40,17 @@ Quick start
    
 ## chatServer.c
 
-	This is the server file. It handles socket connection from clients, accepts the client connection and forwards messages.
+This is the server file. It handles socket connection from clients, accepts the client connection and forwards messages.
 	
-	The functions available in the file are:
+The functions available in the file are:
 	
 **init_pool** : This handles the initialization of the connection pool.
-**add_conn** : Whenever the server accept new connection, this function is used to add it to the pool of connections
+
+**add_conn** : Whenever the server accept new connection, this function is used to add it to the pool of connections.
+
 **remove_conn** : This removes a connection from the connection queue incase of termination by peer or the server.
+
 **add_msg** : Whenever the server reads a message from a connection, the message is added to the message queue.
+
 **write_to_client** : This is the function that forwards the message in the message queue to all other clients except
 the one where the message came from.
